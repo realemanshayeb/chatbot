@@ -4,7 +4,7 @@ from transformers import pipeline
 
 #load zero-shot classifier
 
-classifier = pipeline("zero-shot classification", model="facebook/bart-large-mnli") 
+classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli") 
 
 labels = ["technical issue", "billing problem", "refund reqest", "new account", "cancel subscription"]
 
