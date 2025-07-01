@@ -14,7 +14,8 @@ response_map = {
     "refund request": "I'm happy to help with a refund. Can you provide the order ID?",
     "new account": "That's amazing! Which account are you looking to open with us?",
     "cancel subscription": "I'm sorry to see you go. Would you like help canceling your subscription now?",
-    "unclear": "Could you please clarify your request?"
+    "unclear": "Could you please clarify your request?",
+    "unrelated": "Is this request related to a customer support concern?"
 }
 def classify_intent(text):
     result = classifier(text, candidate_labels = labels)
