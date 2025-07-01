@@ -11,9 +11,9 @@ labels = ["technical issue", "billing problem", "refund reqest", "new account", 
 response_map = {
     "technical issue": "Let's get that fixed. What device or service are you having issues with?",
     "billing problem": "I understand you have a billing concern. Can you share more details or your invoice number?",
-    "refund request": "I’m happy to help with a refund. Can you provide the order ID?",
+    "refund request": "I'm happy to help with a refund. Can you provide the order ID?",
     "new account": "That's amazing! Which account are you looking to open with us?"
-    "cancel subscription": "I’m sorry to see you go. Would you like help canceling your subscription now?"
+    "cancel subscription": "I'm sorry to see you go. Would you like help canceling your subscription now?"
 
 }
 def classify_intent(text):
