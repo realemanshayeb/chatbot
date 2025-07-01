@@ -2,9 +2,10 @@
 import streamlit as st
 from intent_classifier import classify_intent
 
-st.title("Mini Call Center Intent Classifier")
-user_input = st.text_input("Enter customer message:")
+st.title("Customer Suppot Chatbot")
+user_input = st.text_input("You:", placeholder="Type your question or issue...")
 
 if user_input:
-    prediction = classify_intent(user_input)
-    st.write(f"Predicted intent: **{prediction}**")
+    intent, response = classify_intent(user_input)
+    st.markdown(f"**Predicted intent:** `{intent}`")
+    st.markdown("**Chatbot:**" + response)

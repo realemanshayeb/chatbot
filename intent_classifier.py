@@ -8,6 +8,16 @@ classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnl
 
 labels = ["technical issue", "billing problem", "refund reqest", "new account", "cancel subscription"]
 
+response_map = {
+    "technical issue": "Let's get that fixed. What device or service are you having issues with?",
+    "billing problem": "I understand you have a billing concern. Can you share more details or your invoice number?",
+    "refund request": "I’m happy to help with a refund. Can you provide the order ID?",
+    "new account": "That's amazing! Which account are you looking to open with us?"
+    "cancel subscription": "I’m sorry to see you go. Would you like help canceling your subscription now?"
+
+}
 def classify_intent(text):
-    result = classifier(text, labels)
-    return result["labels"][0]  # top prediction
+    result = classifier(text, candidate_labels = labels)
+    intent = result["labels"][0]  # top prediction
+    response = response_map.get(intent, "I'm here to help. Could you clarify your request?")
+    return intent, response
